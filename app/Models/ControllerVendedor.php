@@ -3,8 +3,9 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\ControllerVenda;
 
-class vendedor extends Model
+class ControllerVendedor extends Model
 {
     protected $table = 'vendedor';
     protected $fillable = ['id', 
@@ -22,8 +23,11 @@ class vendedor extends Model
         ];
     }
 
-    public function relVendedor() {
+    /*public function relVendedor() {
         return $this->hasMany('App\Models\venda', 'id_vendedor' ); 
+    }*/
+    public function venda() {
+        return $this->belongsTo(ControllerVenda::class, 'id_vendedor', 'id');
     }
 
 }

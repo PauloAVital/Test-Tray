@@ -3,8 +3,9 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\ControllerVenda;
 
-class produto extends Model
+class ControllerProduto extends Model
 {
     protected $table = 'produto';
     protected $fillable = ['id', 
@@ -20,8 +21,13 @@ class produto extends Model
             'preco' => 'required'
         ];
     }
-
-    public function relProduto() {
-        return $this->hasMany('App\Models\venda', 'id_produto' ); 
+    
+    public function venda() {
+        return $this->belongsTo(ControllerVenda::class, 'id_produto', 'id');
     }
+
+    /*public function relProduto() {
+        return $this->hasMany('App\Models\ControllerVenda', 'id_produto' ); 
+    }*/
+
 }
