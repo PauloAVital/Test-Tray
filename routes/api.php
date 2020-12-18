@@ -17,3 +17,14 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::group(['namespace' => 'Api'], function (){
+    Route::apiResource('Vendedor', 'VendedorApiController');
+    Route::apiResource('Produto', 'ProdutoApiController');
+    Route::apiResource('Venda', 'VendaApiController');
+
+    Route::get('Venda/{id}/Produto', 'VendaApiController@Produtos');
+    Route::get('Venda/{id}/Vendedor', 'VendaApiController@Vendedores');
+    Route::get('Venda/{id}/ProdutoVenda', 'VendaApiController@ProdutoVenda');
+});
+
