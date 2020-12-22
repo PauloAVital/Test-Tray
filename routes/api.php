@@ -26,5 +26,9 @@ Route::group(['namespace' => 'Api'], function (){
     Route::get('Venda/{id}/Produto', 'VendaApiController@Produtos');
     Route::get('Venda/{id}/Vendedor', 'VendaApiController@Vendedores');
     Route::get('Venda/{id}/ProdutoVenda', 'VendaApiController@ProdutoVenda');
+    
+    Route::get('VendedorVendaProduto', 'VendedorApiController@VendedorVendaProduto');
+    Route::get('VendedorVenda/{id}', 'VendaApiController@VendedorVenda');
+    
 });
 

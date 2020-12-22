@@ -13,8 +13,7 @@ class ControllerVenda extends Model
                            'id_vendedor',
                            'id_produto',
                            'qtd_prod',
-                           'total_venda',
-                           'data_venda'
+                           'total_venda'
                           ];
 
     public function rules()
@@ -22,8 +21,7 @@ class ControllerVenda extends Model
         return [
             'id_vendedor' => 'required',
             'id_produto' => 'required',
-            'total_venda' => 'required',
-            'data_venda' => 'required'
+            'total_venda' => 'required'
         ];
     }
 
