@@ -21,7 +21,7 @@ class CreateVenda extends Migration
             $table->foreign('id_produto')->references('id')->on('produto')->onDelete('cascade')->onUpdate('cascade');
             $table->integer('qtd_prod');
             $table->decimal('total_venda', 8, 2);
-            $table->dateTime('data_venda');
+           // $table->dateTime('data_venda');
             $table->timestamps();
             $table->charset = 'utf8';
             $table->collation = 'utf8_general_ci';

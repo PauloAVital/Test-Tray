@@ -19,7 +19,41 @@ class VendedorApiController extends Controller
     public function index()
     {
         $data = ControllerVendedor::all();
-        return response()->json($data);
+        $dataVendedor =  $this->getVendedor($data);
+        return response()->json($dataVendedor);
+    }
+
+    public function getVendedor($array) 
+    {
+        $arrayVendedor = [];
+        foreach ($array as $key => &$val){
+            $arrayVendedor[$key]['id'] = $val['id'];
+            $arrayVendedor[$key]['nome'] = $val['nome'];
+            $arrayVendedor[$key]['email'] = $val['email'];
+            $arrayVendedor[$key]['comissao'] = $val['comissao'];
+        }
+        return $arrayVendedor;
+    }
+
+    public function getVendedorVendaProduto($array) 
+    {
+        $arrayVendedor = [];
+        //var_dump($array);
+        foreach ($array as $key => &$val){
+            $arrayVendedor[$key]['id'] = $val['id'];
+            $arrayVendedor[$key]['nome'] = $val['nome'];
+            $arrayVendedor[$key]['email'] = $val['email'];
+            $arrayVendedor[$key]['comissao'] = $val['comissao'];
+
+        }
+        return $arrayVendedor;
+    }
+
+    public function VendedorVendaProduto()
+    {
+        $data = ControllerVendedor::all();
+        $dataVendedor =  $this->getVendedorVendaProduto($data);
+        return response()->json($dataVendedor);
     }
 
     
