@@ -52,8 +52,6 @@ class VendaApiController extends Controller
            $arrayAcresComissao[$key]['preco_produto'] = $dataProduto[0]['preco'];
 
            $total = $val['total_venda'];
-           
-           $valorTotal = $valorTotal + $total;
 
            $arrayAcresComissao[$key]['total_venda'] = number_format($val['total_venda'], 2, ',', '.');
            $totalComissionado = $total + ($total / 100 * $arrayAcresComissao[$key]['comissao']);           
