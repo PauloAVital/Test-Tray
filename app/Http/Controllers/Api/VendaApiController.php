@@ -32,6 +32,8 @@ class VendaApiController extends Controller
     public function getComissao($array)
     {
         $arrayAcresComissao = [];
+        $valorTotal = '';
+        $valorTotalComissionado = '';
         foreach ($array as $key => &$val) {
 
            $arrayAcresComissao[$key]['id'] = $val['id_vendedor'];
@@ -50,6 +52,8 @@ class VendaApiController extends Controller
            $arrayAcresComissao[$key]['preco_produto'] = $dataProduto[0]['preco'];
 
            $total = $val['total_venda'];
+           
+           $valorTotal = $valorTotal + $total;
 
            $arrayAcresComissao[$key]['total_venda'] = number_format($val['total_venda'], 2, ',', '.');
            $totalComissionado = $total + ($total / 100 * $arrayAcresComissao[$key]['comissao']);           
@@ -57,9 +61,10 @@ class VendaApiController extends Controller
            $arrayAcresComissao[$key]['total_comissionado'] =  number_format($totalComissionado, 2, ',', '.');
            $arrayAcresComissao[$key]['data_venda'] = date( 'd/m/Y H:i' , strtotime($val['created_at']));
            
-        }
+        }        
         return $arrayAcresComissao;
     }
+
     public function validaRequisao() 
     {
         $qtdVendedor = ControllerVendedor::all();

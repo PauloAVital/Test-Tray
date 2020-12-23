@@ -46,7 +46,7 @@ return [
         'mysql' => [
             'driver' => 'mysql',
             'url' => env('DATABASE_URL', ''),
-            'host' => '172.24.0.2',
+            'host' => '172.24.0.4',
             'port' => '3306',
             'database' => 'tray',
             'username' => 'tray-user',
