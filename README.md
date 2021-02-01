@@ -47,7 +47,7 @@ Comando no terminal:
 
 ---
 
-7.1. **sudo docker-compose exec app php artisan**
+7.1. **sudo docker-compose exec app php artisan migrate**
 
 ---
 
