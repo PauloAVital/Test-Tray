@@ -47,6 +47,10 @@ Comando no terminal:
 
 ---
 
+7.1. **sudo docker-compose exec app php artisan**
+
+---
+
 8. Acesse o **_http://localhost:8000/_**
 
 ---
