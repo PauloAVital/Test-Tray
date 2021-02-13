@@ -3,6 +3,15 @@
 # Realizado em um sistema Linux
 
 ---
+# instalando o docker-compose
+
+1. sudo su
+2. apt-get install -y docker.io
+3. sudo docker run -it ubuntu /bin/bash
+4. sudo gpasswd -a vitallinux docker (*onde vitallinux é o nome que precede a linha de comando)
+5. cat /etc/group
+
+---
 ## Subindo o Docker para rodar o app
 1. **sudo docker-compose build app**
 2. **sudo docker-compose up -d**
